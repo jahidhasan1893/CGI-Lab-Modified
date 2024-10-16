@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Virtual environment directories
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# IDE settings (e.g., PyCharm, VSCode)
+.idea/
+
+# OS-specific files (macOS, Windows)
+.DS_Store

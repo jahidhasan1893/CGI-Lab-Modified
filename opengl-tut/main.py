@@ -1,4 +1,5 @@
-from glutInitialize import gluteSetup, displayPoints
+# from glutInitialize import gluteSetup, displayPoints
+from pyGameInitialize import pygameSetup
 from Line.dda import ddaAlgo
 from Line.bresenham import bresenham_line, bresenham_line_all_condition
 from Circle.bresenham import bresenham_circle
@@ -29,7 +30,7 @@ def main():
     # cohenSutherlandClip(1, 5, 4, 1)
 
     line_pixel.append(bresenham_line_all_condition([1, 1], [-5, 10]))
-    gluteSetup(line_pixel)
+    pygameSetup(line_pixel)
 
 
 if __name__ == '__main__':
