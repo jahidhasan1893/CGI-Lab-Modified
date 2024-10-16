@@ -75,6 +75,7 @@ If you haven't already cloned the repository, you can do it either from PyCharm 
    - Click the **Run** button (the green triangle in the top-right corner).
    - Or use `Shift + F10` to run the project.
 
+[Sample Generated Figure](opengl-tut/Exam/sampleFigure.md)
 --------------------
 
 --------------------
