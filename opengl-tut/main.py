@@ -1,4 +1,3 @@
-# from glutInitialize import gluteSetup, displayPoints
 from pyGameInitialize import pygameSetup
 from Line.dda import ddaAlgo
 from Line.bresenham import bresenham_line, bresenham_line_all_condition

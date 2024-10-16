@@ -1,4 +1,4 @@
-from glutInitialize import gluteSetup, displayPoints
+from pyGameInitialize import pygameSetup
 from Line.dda import ddaAlgo
 from Line.bresenham import bresenham_line, bresenham_line_all_condition
 from Circle.bresenham import bresenham_circle
@@ -147,7 +147,7 @@ def main():
 
 
 
-    gluteSetup(line_pixel)
+    pygameSetup(line_pixel)
 
 
 if __name__ == '__main__':

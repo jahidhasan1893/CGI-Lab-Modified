@@ -1,10 +1,10 @@
-from glutInitialize import gluteSetup, displayPoints
-from Line.dda import ddaAlgo
+from pyGameInitialize import pygameSetup
+# from Line.dda import ddaAlgo
 from Line.bresenham import bresenham_line, bresenham_line_all_condition
-from Circle.bresenham import bresenham_circle
+# from Circle.bresenham import bresenham_circle
 from Circle.midpoint import midpoint_circle
-from Two_dim_transformation.transformation import translation
-from Two_dim_transformation.CohenSutherland import cohenSutherlandClip
+# from Two_dim_transformation.transformation import translation
+# from Two_dim_transformation.CohenSutherland import cohenSutherlandClip
 
 
 def main():
@@ -92,7 +92,7 @@ def main():
 
 
 
-    gluteSetup(line_pixel)
+    pygameSetup(line_pixel)
 
 
 if __name__ == '__main__':
