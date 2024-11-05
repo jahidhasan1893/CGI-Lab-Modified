@@ -1,4 +1,3 @@
-
 ## Setup
 To open and run a **Python project** that you've cloned from a GitHub repository in **PyCharm**, follow these steps:
 
