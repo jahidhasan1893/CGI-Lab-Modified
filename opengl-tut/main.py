@@ -14,7 +14,7 @@ def main():
         print("\nComputer Graphics Operations Menu:")
         print("1. Draw line using DDA algorithm")
         print("2. Draw line using basic Bresenham algorithm")
-        print("3. Draw line using Bresenham for all slopes")
+        print("3. Draw line using Bresenham for all conditions")
         print("4. Draw circle using Bresenham algorithm")
         print("5. Draw circle using Midpoint algorithm")
         print("6. Perform 2D translation")
