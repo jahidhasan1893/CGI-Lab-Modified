@@ -1,7 +1,3 @@
-# Computer-Graphics-Basics
-This repo represents my learning of SWE 424(Computer Graphics and Image Processing Lab) course.
-
-
 ## Setup
 To open and run a **Python project** that you've cloned from a GitHub repository in **PyCharm**, follow these steps:
 
@@ -75,7 +71,3 @@ If you haven't already cloned the repository, you can do it either from PyCharm 
    - Click the **Run** button (the green triangle in the top-right corner).
    - Or use `Shift + F10` to run the project.
 
-[Sample Generated Figure](opengl-tut/Exam/sampleFigure.md)
---------------------
-
---------------------# CGI-Lab-Modified
