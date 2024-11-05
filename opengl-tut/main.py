@@ -29,9 +29,11 @@ def main():
         print("15. Draw Pentagon")
         print("16. Clear Screen")
         print("17. Undo Last Operation")
-        print("18. Exit")
+        print("18. Draw Shaheed Minar")
+        print("19. Type 'SUST'")
+        print("20. Exit")
         
-        choice = input("\nEnter your choice (1-18): ")
+        choice = input("\nEnter your choice (1-20): ")
         
         if choice == '1':
             x1 = int(input('Enter x1: '))
@@ -121,7 +123,6 @@ def main():
             y = int(input('Enter top-left y: '))
             width = int(input('Enter width: '))
             height = int(input('Enter height: '))
-            # Draw rectangle using lines
             line_pixel.append(bresenham_line_all_condition([x, y], [x + width, y]))
             line_pixel.append(bresenham_line_all_condition([x + width, y], [x + width, y + height]))
             line_pixel.append(bresenham_line_all_condition([x + width, y + height], [x, y + height]))
@@ -134,7 +135,6 @@ def main():
             y2 = int(input('Enter y2: '))
             x3 = int(input('Enter x3: '))
             y3 = int(input('Enter y3: '))
-            # Draw triangle using lines
             line_pixel.append(bresenham_line_all_condition([x1, y1], [x2, y2]))
             line_pixel.append(bresenham_line_all_condition([x2, y2], [x3, y3]))
             line_pixel.append(bresenham_line_all_condition([x3, y3], [x1, y1]))
@@ -143,7 +143,6 @@ def main():
             x = int(input('Enter top-left x: '))
             y = int(input('Enter top-left y: '))
             size = int(input('Enter size: '))
-            # Draw square using lines
             line_pixel.append(bresenham_line_all_condition([x, y], [x + size, y]))
             line_pixel.append(bresenham_line_all_condition([x + size, y], [x + size, y + size]))
             line_pixel.append(bresenham_line_all_condition([x + size, y + size], [x, y + size]))
@@ -153,7 +152,6 @@ def main():
             x = int(input('Enter center x: '))
             y = int(input('Enter center y: '))
             radius = int(input('Enter radius: '))
-            # Calculate pentagon vertices
             from math import cos, sin, pi
             vertices = []
             for i in range(5):
@@ -161,7 +159,6 @@ def main():
                 vx = x + radius * cos(angle)
                 vy = y + radius * sin(angle)
                 vertices.append([int(vx), int(vy)])
-            # Draw pentagon using lines
             for i in range(5):
                 line_pixel.append(bresenham_line_all_condition(vertices[i], vertices[(i + 1) % 5]))
             
@@ -171,15 +168,68 @@ def main():
         elif choice == '17':
             if line_pixel:
                 line_pixel.pop()
-            
+
         elif choice == '18':
+            line_pixel.append(midpoint_circle(0, 0, 5))
+            
+            # Left section
+            line_pixel.append(bresenham_line_all_condition([-30, -20], [-30, 15]))
+            line_pixel.append(bresenham_line_all_condition([-30, 15], [-20, 15]))
+            line_pixel.append(bresenham_line_all_condition([-20, -20], [-20, 15]))
+            
+            # Center section
+            line_pixel.append(bresenham_line_all_condition([-10, -20], [-10, 15]))
+            line_pixel.append(bresenham_line_all_condition([-10, 15], [0, 25]))
+            line_pixel.append(bresenham_line_all_condition([0, 15], [10, 25]))
+            line_pixel.append(bresenham_line_all_condition([10, 15], [20, 25]))
+            line_pixel.append(bresenham_line_all_condition([0, 25], [20, 25]))
+            line_pixel.append(bresenham_line_all_condition([0, 5], [0, 15]))
+            line_pixel.append(bresenham_line_all_condition([0, -5], [0, -20]))
+            line_pixel.append(bresenham_line_all_condition([10, -20], [10, 15]))
+            
+            # Right section
+            line_pixel.append(bresenham_line_all_condition([20, -20], [20, 15]))
+            line_pixel.append(bresenham_line_all_condition([20, 15], [30, 15]))
+            line_pixel.append(bresenham_line_all_condition([30, -20], [30, 15]))
+            
+            # Base section
+            line_pixel.append(bresenham_line_all_condition([-45, -20], [45, -20]))
+            line_pixel.append(bresenham_line_all_condition([-45, -20], [-40, -25]))
+            line_pixel.append(bresenham_line_all_condition([-40, -25], [-35, -30]))
+            line_pixel.append(bresenham_line_all_condition([45, -20], [40, -25]))
+            line_pixel.append(bresenham_line_all_condition([40, -25], [35, -30]))
+            line_pixel.append(bresenham_line_all_condition([-40, -25], [40, -25]))
+            line_pixel.append(bresenham_line_all_condition([-35, -30], [35, -30]))
+
+        elif choice == '19':
+            # Letter S
+            line_pixel.append([(-45, 0, -35, 15)])
+            line_pixel.append([(-45, 0, -35, 0, 1)])
+            line_pixel.append([(-45, -15, -35, 0)])
+            
+            # Letter U
+            line_pixel.append([(-25, 15, -25, -15)])
+            line_pixel.append([(-25, -15, -10, -15)])
+            line_pixel.append([(-10, -15, -10, 15)])
+            
+            # Letter S
+            line_pixel.append([(0, 15, 10, 15)])
+            line_pixel.append([(0, 15, 0, 0)])
+            line_pixel.append([(0, 0, 10, 0)])
+            line_pixel.append([(10, 0, 10, -15)])
+            line_pixel.append([(0, -15, 10, -15)])
+            
+            # Letter T
+            line_pixel.append([(20, 15, 40, 15, 1)])
+            line_pixel.append([(30, 15, 30, -15, 1)])
+            
+        elif choice == '20':
             break
             
         else:
             print("Invalid choice! Please try again.")
             continue
         
-        # Initialize pygame and display the result after each operation
         pygameSetup(line_pixel)
 
 
